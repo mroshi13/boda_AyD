@@ -193,8 +193,6 @@ export default function HomePage() {
             </div>
           </section>
 
-          <div className="w-100 h-px bg-black/40 mx-auto" />
-
           <section
             id="faqs"
             className="min-h-screen flex items-center bg-[#5b6946] text-[#faf3dd] px-6 py-24"
@@ -249,8 +247,6 @@ export default function HomePage() {
               </div>
             </div>
           </section>
-
-          <div className="w-24 h-px bg-black/40 mx-auto" />
 
           <section
             id="momentos"
