@@ -241,7 +241,7 @@ export default function HomePage() {
               <div className="flex justify-center">
                 <div className="bg-[#FFFDF8] p-5 rounded-3xl shadow-2xl border border-gray-200">
                   <img
-                    src="/images/anillo.jpg"
+                    src="/images/anillo.JPG"
                     alt="Alec y Danaee"
                     className="rounded-2xl object-cover w-full max-w-md aspect-[4/5]"
                   />
