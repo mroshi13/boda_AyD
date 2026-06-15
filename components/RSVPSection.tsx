@@ -1,6 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Cormorant_Garamond } from "next/font/google";
+import { Bodoni_Moda } from "next/font/google";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 
 const API_URL =
   "https://script.google.com/macros/s/AKfycbzmusq5cs5qGQhqL5-1vVKZgTp0RVWFQ6ioLsGAmOhzmKF5aWQebir_ze4Avct5H7682w/exec";
@@ -138,11 +151,11 @@ export default function RSVPSection() {
   }
 
   return (
-    <section id="rsvp" className="py-24 px-6 flex justify-center">
+    <section id="rsvp" className={`${bodoni.className} py-24 px-6 flex bg-[#5b6946] justify-center`}>
       <div className="w-full max-w-xl space-y-6">
         <div className="text-center space-y-3">
-          <h2 className="text-4xl font-bold">RSVP</h2>
-          <h3 className="text-2xl">¡Hola, {guest.name}! 💌</h3>
+          <h1 className={`${cormorant.className} text-4xl text-[#faf3dd] font-bold`}>RSVP</h1>
+          <h3 className="text-2xl text-[#faf3dd]">¡Hola, {guest.name}! 💌</h3>
 
           {guest.message && (
             <p className="text-gray-600 italic">{guest.message}</p>
