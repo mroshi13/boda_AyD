@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond, Cormorant_SC } from "next/font/google";
 import { Bodoni_Moda } from "next/font/google";
+import { Meow_Script } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -14,6 +15,10 @@ const bodoni = Bodoni_Moda({
   weight: ["400", "500", "600", "700"],
 });
 
+const meow = Meow_Script({
+  subsets: ["latin"],
+  weight: ["400"]
+});
 
 const API_URL =
   "https://script.google.com/macros/s/AKfycbzmusq5cs5qGQhqL5-1vVKZgTp0RVWFQ6ioLsGAmOhzmKF5aWQebir_ze4Avct5H7682w/exec";
@@ -140,10 +145,10 @@ export default function RSVPSection() {
   if (!guest) {
     return (
       <section id="rsvp" className="py-24 px-6 text-center">
-        <h2 className="text-4xl font-bold">RSVP</h2>
-        <p className="mt-4 text-gray-600">Invitación no encontrada.</p>
+        <h2 className={`${cormorant.className}text-4xl font-bold`}>RSVP</h2>
+        <p className={`${cormorant.className}mt-4 text-gray-600`}>Invitación no encontrada.</p>
 
-        <p className="mt-4 text-xs text-gray-400">
+        <p className={`${cormorant.className}mt-4 text-xs text-gray-400`}>
           inviteID recibido: {inviteID || "ninguno"}
         </p>
       </section>
@@ -151,11 +156,11 @@ export default function RSVPSection() {
   }
 
   return (
-    <section id="rsvp" className={`${bodoni.className} py-24 px-6 flex bg-[#5b6946] justify-center`}>
+    <section id="rsvp" className={`${bodoni.className} py-24 px-6 flex bg-[#FFFAEE] justify-center`}>
       <div className="w-full max-w-xl space-y-6">
         <div className="text-center space-y-3">
-          <h1 className={`${cormorant.className} text-4xl text-[#faf3dd] font-bold`}>RSVP</h1>
-          <h3 className="text-2xl text-[#faf3dd]">¡Hola, {guest.name}! 💌</h3>
+          <h1 className={`${meow.className} text-4xl text-[#222222] font-bold`}>RSVP</h1>
+          <h3 className={`${cormorant.className} text-2xl text-[#222222]`}>¡Hola, {guest.name}! 💌</h3>
 
           {guest.message && (
             <p className="text-gray-600 italic">{guest.message}</p>
@@ -172,8 +177,8 @@ export default function RSVPSection() {
 
         {submitted ? (
           <div className="bg-[#FFFDF8] border rounded-2xl p-8 shadow-sm text-center">
-            <h2 className="text-3xl font-bold">¡Gracias, {guest.name}! 🎉</h2>
-            <p className="mt-4 text-gray-700">Hemos recibido tu RSVP.</p>
+            <h2 className={`${cormorant.className} ext-3xl font-bold`}>¡Gracias, {guest.name}! 🎉</h2>
+            <p className={`${cormorant.className} mt-4 text-gray-700`}>Hemos recibido tu RSVP.</p>
           </div>
         ) : (
           <form

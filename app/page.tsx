@@ -2,8 +2,11 @@
 
 import { useEffect, useState } from "react";
 import RSVPSection from "../components/RSVPSection";
+import WavySection from "../components/WavySection";
+import CountdownTimer from "../components/CountdownTimer";
 import { Cormorant_Garamond } from "next/font/google";
 import { Bodoni_Moda } from "next/font/google";
+import { Meow_Script } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -13,6 +16,11 @@ const cormorant = Cormorant_Garamond({
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const meow = Meow_Script({
+  subsets: ["latin"],
+  weight: ["400"]
 });
 
 const galleryPhotos = [
@@ -29,6 +37,8 @@ const galleryPhotos = [
     alt: "AyD Foto 3",
   },
 ];
+
+const googleMapsUrl = "https://maps.app.goo.gl/yWLM1V2Bep94eHXk9";
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +85,7 @@ export default function HomePage() {
   const linkClass = "text-blue-600 underline hover:text-blue-800 transition";
 
   function openInvitation() {
-  const audio = document.querySelector("audio");
+    const audio = document.querySelector("audio");
 
     if (audio instanceof HTMLAudioElement) {
       audio.volume = 0.5;
@@ -99,12 +109,12 @@ export default function HomePage() {
   }
 
   return (
-    <main className="bg-[#FAF2DD] text-gray-800">
+    <main className="bg-[#FFFAEE] text-gray-800">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/cruzando_calle.jpg')" }}
+          className="absolute inset-0 bg-cover bg-[position:center_60%]"
+          style={{ backgroundImage: "url('/images/agarrados_manos.jpg')" }}
         />
 
         <div className="relative z-10 w-full max-w-2xl">
@@ -142,79 +152,169 @@ export default function HomePage() {
 
       {isOpen && (
         <>
-          <div className="w-100 h-px bg-black/40 mx-auto" />
+          <WavySection>
+          {/* COUPLE SECTION */}
+          <section
+            id="novios"
+            className="min-h-0 flex items-center px-6 py-24 text-center"
+          >
+            
+            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[55%_45%] gap-10 items-center">
+              <div className={`${cormorant.className} flex flex-col text-5xl items-center space-y-12`}>
+                <h1 className={`${meow.className} text-[clamp(3rem,6vw,6rem)] leading-tight font-bold`}>
+                  Los Novios
+                </h1>
 
+                <p>
+                  Alec Ortega Lara
+                </p>
+
+                <p>Y</p>
+
+                <p>
+                  Susana Danaee Fuerte Gonzalez
+                </p>
+              </div>
+              
+              
+              <div className="flex justify-start">
+                <div className="bg-[#FFFDF8] p-5 rounded-3xl shadow-2xl border border-gray-200">
+                  <img
+                    src="/images/espalda.jpg"
+                    alt="Alec y Danaee"
+                    className="rounded-2xl object-cover w-full max-w-md aspect-[4/5]"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          </WavySection>
+
+          <section
+            id="timer"
+            className="relative flex min-h-screen items-center justify-center overflow-hidden"
+          >
+            {/* Background Image */}
+            <img
+              src="/images/zapatos.jpg"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover object-[center_50%]"
+            />
+
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/35" />
+
+            {/* Content */}
+            <div className="relative z-10 rounded-3xl border border-white/20 bg-white/10 p-10 backdrop-blur-md shadow-2xl">
+              <CountdownTimer />
+            </div>
+          </section>
+
+          <WavySection>
           {/* DETAILS SECTION */}
           <section
             id="detalles"
-            className="min-h-screen flex items-center px-6 py-24 text-center"
+            className="min-h-0 flex items-center px-6 py-24 text-center"
           >
+            
             <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[30%_70%] gap-12 items-center">
               <div className="flex justify-center">
                 <img
-                  src="/images/flores1.png"
+                  src="/images/iniciales.png"
                   alt="Decoración floral"
-                  className="w-full max-w-xs object-contain"
+                  className="w-full max-w-lg object-contain"
                 />
               </div>
 
               <div className="flex flex-col items-center space-y-12">
-                <h1 className={`${cormorant.className} text-5xl font-bold`}>
-                  Detalles de la Misa y Recepción
+                <h1 className={`${meow.className} text-[clamp(3rem,6vw,6rem)] leading-tight font-bold`}>
+                  Lo que necesitas saber
                 </h1>
+                <h2 className={`${bodoni.className} text-4xl leading-tight font-bold`}>
+                  Sábado, 10 de Octubre de 2026
+                </h2>
 
                 <div className="space-y-6">
                   <div
                     className={`${bodoni.className} text-2xl text-gray-700 leading-relaxed space-y-4`}
                   >
+                    
                     <p>3:00 PM — Misa en X de la Madre</p>
                     <p>4:30 PM — Rompe Hielo</p>
                     <p>5:00 PM — Recepción y Fiesta</p>
+                    <p>Agradecemos su comprensión al asistir sin niños</p>
                   </div>
                 </div>
 
-                <div className="max-w-xl w-full border rounded-2xl p-6 bg-[#FAF2DD] shadow-sm text-center">
+                <div className="max-w-xl w-full border rounded-2xl p-6 bg-[#FFFAEE] shadow-sm text-center">
                   <h3
-                    className={`${cormorant.className} font-semibold text-xl mb-3`}
+                    className={`${bodoni.className} font-semibold text-xl mb-3`}
                   >
                     📍 IMANHA
                   </h3>
-
                   <a
-                    href="https://maps.app.goo.gl/yWLM1V2Bep94eHXk9"
+                    href={googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={linkClass}
+                    className="
+                      inline-flex
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-full
+                      border
+                      border-[#222222]
+                      bg-[#f0f0f0]
+                      px-6
+                      py-3
+                      text-lg
+                      font-medium
+                      text-[#222222]
+                      transition-all
+                      duration-300
+                      hover:-translate-y-1
+                      hover:bg-[#f1eadb]
+                      hover:shadow-lg
+                    "
                   >
-                    Lote Francisco, Zarco, 22753 Francisco Zarco, B.C., Mexico
+                  Ver en Google Maps
                   </a>
                 </div>
               </div>
             </div>
           </section>
+          </WavySection>
 
+          <WavySection>
           <section
             id="faqs"
-            className="min-h-screen flex items-center bg-[#5b6946] text-[#faf3dd] px-6 py-24"
+            className="min-h-0 flex items-center text-[#222222] px-6 py-24"
           >
-            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[60%_40%] gap-16 items-center">
+            <div className="w-full max-w-5xl mx-auto grid md:grid-cols-[60%_40%] gap-6 items-center">
               <div className="flex flex-col items-start space-y-12 text-left">
                 <div className="space-y-6">
-                  <h2 className={`${cormorant.className} text-5xl font-bold`}>
-                    Código de Vestimenta
-                  </h2>
+                  <div className="flex items-center justify-start gap-4 mb-8">
+                    <h2 className={`${meow.className} text-7xl font-bold`}>
+                      Código de Vestimenta
+                    </h2>
+
+                    <img
+                      src="/images/vestido.png"
+                      alt="Wedding dress"
+                      className="h-14 w-14 object-contain"
+                    />
+                  </div>
 
                   <div
                     className={`${bodoni.className} text-2xl leading-relaxed space-y-4`}
                   >
-                    <p>Tu presencia es muy importante para nosotros.</p>
-
                     <p>
-                      Para nuestra celebración, les pedimos amablemente evitar
-                      los colores
+                      Hombres: Formal {"(no tenis)"}<br/>
+                      Mujeres: Formal {"(vestido largo)"} <br/>
+                      Evitar colores:
                       <span className="font-semibold">
                         {" "}
-                        blanco, beige, azul eléctrico, rojo y negro.
+                        blanco, beige, rojo, y negro.
                       </span>
                     </p>
 
@@ -236,7 +336,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <div className="bg-[#FFFDF8] p-5 rounded-3xl shadow-2xl border border-gray-200">
                   <img
                     src="/images/anillo.JPG"
@@ -247,7 +347,9 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+          </WavySection>
 
+          
           <section
             id="momentos"
             className="relative overflow-hidden px-6 py-24 text-center"
@@ -269,23 +371,22 @@ export default function HomePage() {
             </div>
           </section>
 
-          <div className="w-100 h-px bg-black/40 mx-auto" />
-
+          <WavySection>
           <section id="hospedaje" className="px-6 py-24 text-center">
             <div className="mx-auto w-full max-w-5xl space-y-16">
               <div className="space-y-4">
-                <h1 className={`${cormorant.className} text-5xl font-semibold`}>
+                <h1 className={`${meow.className} text-7xl font-semibold`}>
                   Hospedaje
                 </h1>
-
-                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                <br/>
+                <p className={`${cormorant.className} text-2xl text-gray-700 max-w-2xl mx-auto`}>
                   Les compartimos algunas opciones de hospedaje en Valle de Guadalupe y Ensenada.
                 </p>
               </div>
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
                 <h2
-                  className={`${cormorant.className} text-3xl font-semibold text-center`}
+                  className={`${meow.className} text-4xl font-semibold text-center`}
                 >
                   Valle de Guadalupe
                 </h2>
@@ -313,7 +414,7 @@ export default function HomePage() {
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
                 <h2
-                  className={`${cormorant.className} text-3xl font-semibold text-center`}
+                  className={`${meow.className} text-4xl font-semibold text-center`}
                 >
                   Ensenada
                 </h2>
@@ -340,8 +441,11 @@ export default function HomePage() {
               </div>
             </div>
           </section>
-
-          <RSVPSection />
+          </WavySection>
+          <WavySection>
+            <RSVPSection />
+          </WavySection>
+          
         </>
       )}
     </main>
