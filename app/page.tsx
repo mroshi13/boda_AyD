@@ -103,7 +103,7 @@ export default function HomePage() {
 
     setTimeout(() => {
       document
-        .getElementById("detalles")
+        .getElementById("novios")
         ?.scrollIntoView({ behavior: "smooth" });
     }, 1500);
   }
