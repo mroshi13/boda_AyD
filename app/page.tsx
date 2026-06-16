@@ -220,7 +220,7 @@ export default function HomePage() {
             <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[30%_70%] gap-12 items-center">
               <div className="flex justify-center">
                 <img
-                  src="/images/iniciales.png"
+                  src="/images/Iniciales.png"
                   alt="Decoración floral"
                   className="w-full max-w-lg object-contain"
                 />
