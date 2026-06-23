@@ -159,7 +159,10 @@ export default function RSVPSection() {
     <section id="rsvp" className={`${bodoni.className} py-24 px-6 flex bg-[#FFFAEE] justify-center`}>
       <div className="w-full max-w-xl space-y-6">
         <div className="text-center space-y-3">
-          <h1 className={`${meow.className} text-4xl text-[#222222] font-bold`}>RSVP</h1>
+          <p>
+            <h2 className={`${meow.className} text-4xl text-[#222222] font-bold`}>RSVP</h2>
+          </p>
+          
           <h3 className={`${cormorant.className} text-2xl text-[#222222]`}>¡Hola, {guest.name}! 💌</h3>
 
           {guest.message && (

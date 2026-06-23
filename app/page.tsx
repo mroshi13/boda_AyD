@@ -52,7 +52,7 @@ export default function HomePage() {
       maps: "https://maps.app.goo.gl/CuRh41Kjcm89kWos5",
     },
     {
-      name: "Hotel Boutique & Spa Valle de Guadalupe",
+      name: "Hotel Boutique & Spa",
       reservation: "https://hoteldelvalledeguadalupe.com",
       maps: "https://maps.app.goo.gl/ZumrJ7N9UvELdJhg6",
     },
@@ -70,7 +70,7 @@ export default function HomePage() {
 
   const hotelsOutsideValley = [
     {
-      name: "City Express Plus by Marriott Ensenada",
+      name: "City Express Plus",
       reservation:
         "https://www.marriott.com/en-us/hotels/tijpe-city-express-plus-ensenada/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
       maps: "https://maps.app.goo.gl/Svn58FgvWkYBegyx6",
@@ -152,7 +152,9 @@ export default function HomePage() {
 
       {isOpen && (
         <>
-          <WavySection>
+          <WavySection
+          topFlower="../images/orchid-top.png"
+          bottomFlower="../images/orchid-bottom.png">
           {/* COUPLE SECTION */}
           <section
             id="novios"
@@ -210,7 +212,8 @@ export default function HomePage() {
             </div>
           </section>
 
-          <WavySection>
+          <WavySection
+            bottomFlower="">
           {/* DETAILS SECTION */}
           <section
             id="detalles"
@@ -222,7 +225,7 @@ export default function HomePage() {
                 <img
                   src="/images/Iniciales.png"
                   alt="Decoración floral"
-                  className="w-full max-w-lg object-contain"
+                  className="w-32 md:w-48 lg:w-64 object-contain"
                 />
               </div>
 
@@ -239,10 +242,12 @@ export default function HomePage() {
                     className={`${bodoni.className} text-2xl text-gray-700 leading-relaxed space-y-4`}
                   >
                     
-                    <p>3:00 PM — Misa en X de la Madre</p>
-                    <p>4:30 PM — Rompe Hielo</p>
-                    <p>5:00 PM — Recepción y Fiesta</p>
-                    <p>Agradecemos su comprensión al asistir sin niños</p>
+                    <p>3:00 PM — Ceremonía</p>
+                    <p>4:30 PM — Cóctel</p>
+                    <p>5:00 PM — Recepción</p> 
+                    <p>6:30 PM - Cena</p>
+                    <p>8:00 PM - Fiesta</p>
+                    <p className="underline">Respetuosamente no niños</p>
                   </div>
                 </div>
 
@@ -309,29 +314,21 @@ export default function HomePage() {
                     className={`${bodoni.className} text-2xl leading-relaxed space-y-4`}
                   >
                     <p>
-                      Hombres: Formal {"(no tenis)"}<br/>
-                      Mujeres: Formal {"(vestido largo)"} <br/>
-                      Evitar colores:
-                      <span className="font-semibold">
-                        {" "}
-                        blanco, beige, rojo, y negro.
-                      </span>
+                      - Formal <br/>
+                      - Mujeres: Vestido Largo<br/>
+                      - Hombres: No tenis
                     </p>
 
                     <p>
-                      Como guía, les compartimos nuestra{" "}
                       <a
                         href="https://pin.it/38qXehQiH"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-white transition"
+                        className="underline hover:text-white underline transition text-blue-700"
                       >
-                        paleta de colores
-                      </a>{" "}
-                      sugerida.
+                        Guía de colores
+                      </a>
                     </p>
-
-                    <p>¡Gracias por acompañarnos en este día tan especial!</p>
                   </div>
                 </div>
               </div>
@@ -371,7 +368,8 @@ export default function HomePage() {
             </div>
           </section>
 
-          <WavySection>
+          <WavySection
+            bottomFlower="../images/olive_branch.png">
           <section id="hospedaje" className="px-6 py-24 text-center">
             <div className="mx-auto w-full max-w-5xl space-y-16">
               <div className="space-y-4">
@@ -442,6 +440,52 @@ export default function HomePage() {
             </div>
           </section>
           </WavySection>
+
+          <WavySection>
+            <section>
+              <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[40%_60%] gap-12 items-center">
+                <div className="flex justify-start">
+                  <div className="bg-[#FFFDF8] p-5 rounded-3xl shadow-2xl border border-gray-200">
+                  <img
+                    src="/images/downtown.jpg"
+                    alt="Decoración floral"
+                    className="rounded-2xl object-cover w-full max-w-md aspect-[4/5]"
+                  />
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-center justify-start gap-4 mb-8">
+                    <h2 className={`${meow.className} text-7xl font-bold`}>
+                      Regalos
+                    </h2>
+
+                    <img
+                      src="/images/icon-gift.png"
+                      alt="Wedding dress"
+                      className="h-14 w-14 object-contain"
+                    />
+                  </div>
+                  <h2 className={`${cormorant.className} text-4xl leading-tight font-bold`}>
+                    Les dejamos informacion sobre los regalos
+                  </h2>
+
+                  <div className="space-y-6">
+                    <div
+                      className={`${cormorant.className} text-2xl text-gray-700 leading-relaxed space-y-4`}
+                    >
+                      <p>
+                        Escribir lo de los regalos
+                      </p>
+                    </div>
+                  </div>
+  
+                </div>
+
+              </div>
+            </section>
+          </WavySection>
+
           <WavySection>
             <RSVPSection />
           </WavySection>
