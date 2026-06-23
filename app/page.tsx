@@ -162,7 +162,7 @@ export default function HomePage() {
           >
             
             <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[55%_45%] gap-10 items-center">
-              <div className={`${cormorant.className} flex flex-col text-5xl items-center space-y-12`}>
+              <div className={`${cormorant.className} flex flex-col text-4xl items-center space-y-12`}>
                 <h1 className={`${meow.className} text-[clamp(3rem,6vw,6rem)] leading-tight font-bold`}>
                   Los Novios
                 </h1>
@@ -290,7 +290,8 @@ export default function HomePage() {
           </section>
           </WavySection>
 
-          <WavySection>
+          <WavySection
+            topFlower="../images/lavanda.png">
           <section
             id="faqs"
             className="min-h-0 flex items-center text-[#222222] px-6 py-24"
@@ -299,7 +300,7 @@ export default function HomePage() {
               <div className="flex flex-col items-start space-y-12 text-left">
                 <div className="space-y-6">
                   <div className="flex items-center justify-start gap-4 mb-8">
-                    <h2 className={`${meow.className} text-7xl font-bold`}>
+                    <h2 className={`${meow.className} text-5xl font-bold`}>
                       Código de Vestimenta
                     </h2>
 
@@ -313,7 +314,7 @@ export default function HomePage() {
                   <div
                     className={`${bodoni.className} text-2xl leading-relaxed space-y-4`}
                   >
-                    <p>
+                    <p className="justify-center">
                       - Formal <br/>
                       - Mujeres: Vestido Largo<br/>
                       - Hombres: No tenis
