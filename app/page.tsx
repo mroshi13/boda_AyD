@@ -346,27 +346,28 @@ export default function HomePage() {
           </section>
           </WavySection>
 
-          
-          <section
-            id="momentos"
-            className="relative overflow-hidden px-6 py-24 text-center"
-          >
-            <div className="mx-auto max-w-7xl space-y-14">
-              <div className="grid gap-10 md:grid-cols-3">
-                {galleryPhotos.map((photo) => (
-                  <div key={photo.src} className="mx-auto w-full max-w-sm">
-                    <div className="rounded-t-full rounded-b-[3rem] border border-[#C8B27C] bg-[#FFFDF8] p-2 shadow-sm">
-                      <img
-                        src={photo.src}
-                        alt={photo.alt}
-                        className="aspect-[3/4] w-full rounded-t-full rounded-b-[2.5rem] object-cover grayscale"
-                      />
+          <WavySection>
+            <section
+              id="momentos"
+              className="relative overflow-hidden px-6 py-24 text-center"
+            >
+              <div className="mx-auto max-w-7xl space-y-14">
+                <div className="grid gap-10 md:grid-cols-3">
+                  {galleryPhotos.map((photo) => (
+                    <div key={photo.src} className="mx-auto w-full max-w-sm">
+                      <div className="rounded-t-full rounded-b-[3rem] border border-[#C8B27C] bg-[#FFFDF8] p-2 shadow-sm">
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          className="aspect-[3/4] w-full rounded-t-full rounded-b-[2.5rem] object-cover grayscale"
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </WavySection>
 
           <WavySection
             bottomFlower="../images/olive_branch.png">
