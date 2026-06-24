@@ -163,10 +163,6 @@ export default function HomePage() {
             
             <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[55%_45%] gap-10 items-center">
               <div className={`${cormorant.className} flex flex-col text-4xl items-center space-y-12`}>
-                <h1 className={`${meow.className} text-[clamp(3rem,6vw,6rem)] leading-tight font-bold`}>
-                  Los Novios
-                </h1>
-
                 <p>
                   Alec Ortega Lara
                 </p>
@@ -225,7 +221,7 @@ export default function HomePage() {
                 <img
                   src="/images/Iniciales.png"
                   alt="Decoración floral"
-                  className="w-32 md:w-48 lg:w-64 object-contain"
+                  className="w-32 md:w-96 lg:w-96 object-contain"
                 />
               </div>
 
@@ -300,7 +296,7 @@ export default function HomePage() {
               <div className="flex flex-col items-start space-y-12 text-left">
                 <div className="space-y-6">
                   <div className="flex items-center justify-start gap-4 mb-8">
-                    <h2 className={`${meow.className} text-5xl font-bold`}>
+                    <h2 className={`${meow.className} text-4xl font-bold`}>
                       Código de Vestimenta
                     </h2>
 
@@ -444,7 +440,7 @@ export default function HomePage() {
           </WavySection>
 
           <WavySection>
-            <section>
+            <section id="regalos">
               <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[40%_60%] gap-12 items-center">
                 <div className="flex justify-start">
                   <div className="bg-[#FFFDF8] p-5 rounded-3xl shadow-2xl border border-gray-200">
@@ -483,6 +479,15 @@ export default function HomePage() {
                   </div>
   
                 </div>
+
+              </div>
+            </section>
+          </WavySection>
+
+          <WavySection>
+            <section id="outro" className="items-center">
+              <div>
+                <h1 className={`${meow.className} text-7xl font-semibold`}>GRACIAS</h1>
 
               </div>
             </section>
