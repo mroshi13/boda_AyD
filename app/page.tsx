@@ -167,10 +167,10 @@ export default function HomePage() {
                   Alec Ortega Lara
                 </p>
 
-                <p>Y</p>
+                <p>&</p>
 
                 <p>
-                  Susana Danaee Fuerte Gonzalez
+                  Susana Danaee Fuerte González
                 </p>
               </div>
               
@@ -219,9 +219,9 @@ export default function HomePage() {
             <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[30%_70%] gap-12 items-center">
               <div className="flex justify-center">
                 <img
-                  src="/images/Iniciales.png"
+                  src="/images/iniciales_gde.png"
                   alt="Decoración floral"
-                  className="w-32 md:w-96 lg:w-96 object-contain"
+                  className="max-w-xl object-contain"
                 />
               </div>
 
@@ -296,6 +296,7 @@ export default function HomePage() {
               <div className="flex flex-col items-start space-y-12 text-left">
                 <div className="space-y-6">
                   <div className="flex items-center justify-start gap-4 mb-8">
+                    <br/>
                     <h2 className={`${meow.className} text-4xl font-bold`}>
                       Código de Vestimenta
                     </h2>
@@ -311,9 +312,9 @@ export default function HomePage() {
                     className={`${bodoni.className} text-2xl leading-relaxed space-y-4`}
                   >
                     <p className="justify-center">
-                      - Formal <br/>
-                      - Mujeres: Vestido Largo<br/>
-                      - Hombres: No tenis
+                      - Vestimenta Formal <br/>
+                      - Mujeres: Vestido Largo <br/>
+                      - Hombres: Traje / No tenis
                     </p>
 
                     <p>
@@ -321,9 +322,9 @@ export default function HomePage() {
                         href="https://pin.it/38qXehQiH"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-white underline transition text-blue-700"
+                        className="underline hover:text-black underline transition text-blue-700"
                       >
-                        Guía de colores
+                        Clic aqui para un guía de colores
                       </a>
                     </p>
                   </div>
@@ -485,16 +486,52 @@ export default function HomePage() {
           </WavySection>
 
           <WavySection>
-            <section id="outro" className="items-center">
-              <div>
-                <h1 className={`${meow.className} text-7xl font-semibold`}>GRACIAS</h1>
-
-              </div>
-            </section>
+            <RSVPSection />
           </WavySection>
 
           <WavySection>
-            <RSVPSection />
+            <section id="outro" className="w-full">
+              <div className="mx-auto grid w-full max-w-7xl px-6 md:px-8 grid-cols-1 items-center gap-10 md:grid-cols-[25%_50%_25%] md:gap-6">
+
+                {/* Left Image */}
+                <div className="flex justify-center md:justify-start">
+                  <div className="rounded-3xl border border-gray-200 bg-[#FFFDF8] p-5 shadow-2xl">
+                    <img
+                      src="/images/downtown.jpg"
+                      alt="Decoración floral"
+                      className="aspect-[4/5] w-full max-w-sm rounded-2xl object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Center Text */}
+                <div className="space-y-6 text-center">
+                  <div className="mb-8 flex items-center justify-center gap-4">
+                    <h2 className={`${meow.className} text-7xl font-bold`}>
+                      Gracias
+                    </h2>
+                  </div>
+
+                  <h2
+                    className={`${cormorant.className} text-4xl font-bold leading-tight`}
+                  >
+                    por acompañarnos!
+                  </h2>
+                </div>
+
+                {/* Right Image */}
+                <div className="flex justify-center md:justify-end md:pr-4">
+                  <div className="rounded-3xl border border-gray-200 bg-[#FFFDF8] p-5 shadow-2xl">
+                    <img
+                      src="/images/anillo_deatras.jpg"
+                      alt="Decoración floral"
+                      className="aspect-[4/5] w-full max-w-sm rounded-4xl object-cover"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </section>
           </WavySection>
           
         </>

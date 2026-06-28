@@ -26,7 +26,7 @@ export default function WavySection({
               src={topFlower}
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute left-0 top-0 z-0 w-32 md:w-48 lg:w-72"
+              className="pointer-events-none absolute left-0 top-0 z-0 w-32 md:w-72 lg:w-84"
             />
           )}
 
