@@ -208,83 +208,71 @@ export default function HomePage() {
             </div>
           </section>
 
-          <WavySection
-            bottomFlower="">
-          {/* DETAILS SECTION */}
+          <WavySection bottomFlower="">
           <section
             id="detalles"
-            className="min-h-0 flex items-center px-6 py-24 text-center"
+            className="min-h-0 w-full overflow-hidden px-4 py-20 text-center md:px-6 md:py-24"
           >
-            
-            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[30%_70%] gap-12 items-center">
-              <div className="flex justify-center">
+            <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 md:grid-cols-[30%_70%] md:gap-12">
+              <div className="flex justify-center overflow-hidden">
                 <img
                   src="/images/iniciales_gde.png"
                   alt="Decoración floral"
-                  className="max-w-xl object-contain"
+                  className="w-full max-w-[260px] object-contain md:max-w-xl"
                 />
               </div>
 
-              <div className="flex flex-col items-center space-y-12">
-                <h1 className={`${meow.className} text-[clamp(3rem,6vw,6rem)] leading-tight font-bold`}>
+              <div className="mx-auto flex w-full max-w-[720px] flex-col items-center space-y-10 px-1 md:space-y-12">
+                <h1
+                  className={`${meow.className} max-w-full text-center text-[clamp(3rem,12vw,6rem)] leading-tight font-bold`}
+                >
                   Lo que necesitas saber
                 </h1>
-                <h2 className={`${bodoni.className} text-4xl leading-tight font-bold`}>
-                  Sábado, 10 de Octubre de 2026
-                </h2>
 
-                <div className="space-y-6">
-                  <div
-                    className={`${bodoni.className} text-2xl text-gray-700 leading-relaxed space-y-4`}
-                  >
-                    
-                    <p>3:00 PM — Ceremonía</p>
-                    <p>4:30 PM — Cóctel</p>
-                    <p>5:00 PM — Recepción</p> 
-                    <p>6:30 PM - Cena</p>
-                    <p>8:00 PM - Fiesta</p>
-                    <p className="underline">Respetuosamente no niños</p>
-                  </div>
+                <div
+                  className={`${bodoni.className} w-full max-w-full space-y-6 text-center text-xl leading-relaxed text-gray-700 md:text-3xl`}
+                >
+                  {[
+                    ["/images/rings-icon.png", "Ceremonia", "3:00 PM — Ceremonía", "h-10 w-10"],
+                    ["/images/icons-bebida.png", "Cóctel", "4:30 PM — Cóctel", "h-10 w-10"],
+                    ["/images/icons-invitacion.png", "Recepción", "5:00 PM — Recepción", "h-8 w-8"],
+                    ["/images/icons-comida.png", "Cena", "6:30 PM — Cena", "h-10 w-10"],
+                    ["/images/icons-confeti.png", "Fiesta", "8:00 PM — Fiesta", "h-10 w-10"],
+                  ].map(([src, alt, text, size]) => (
+                    <p
+                      key={text}
+                      className="mx-auto flex w-full max-w-full items-center justify-center gap-3 text-center md:gap-5"
+                    >
+                      <img
+                        src={src}
+                        alt={alt}
+                        className={`${size} shrink-0 object-contain`}
+                      />
+                      <span className="min-w-0 break-words">{text}</span>
+                    </p>
+                  ))}
+
+                  <p className="pt-4 underline">Respetuosamente no niños</p>
                 </div>
 
-                <div className="max-w-xl w-full border rounded-2xl p-6 bg-[#FFFAEE] shadow-sm text-center">
-                  <h3
-                    className={`${bodoni.className} font-semibold text-xl mb-3`}
-                  >
+                <div className="mx-auto w-full max-w-xl rounded-2xl border bg-[#FFFAEE] p-5 text-center shadow-sm md:p-6">
+                  <h3 className={`${bodoni.className} mb-3 text-xl font-semibold`}>
                     📍 IMANHA
                   </h3>
+
                   <a
                     href={googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      gap-2
-                      rounded-full
-                      border
-                      border-[#222222]
-                      bg-[#f0f0f0]
-                      px-6
-                      py-3
-                      text-lg
-                      font-medium
-                      text-[#222222]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:bg-[#f1eadb]
-                      hover:shadow-lg
-                    "
+                    className="mx-auto inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-[#222222] bg-[#f0f0f0] px-5 py-3 text-center text-base font-medium text-[#222222] transition-all duration-300 hover:-translate-y-1 hover:bg-[#f1eadb] hover:shadow-lg md:px-6 md:text-lg"
                   >
-                  Ver en Google Maps
+                    Ver en Google Maps
                   </a>
                 </div>
               </div>
             </div>
           </section>
-          </WavySection>
+        </WavySection>
 
           <WavySection
             topFlower="../images/lavanda.png">
@@ -297,7 +285,7 @@ export default function HomePage() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-start gap-4 mb-8">
                     <br/>
-                    <h2 className={`${meow.className} text-4xl font-bold`}>
+                    <h2 className={`${meow.className} text-5xl font-bold`}>
                       Código de Vestimenta
                     </h2>
 
@@ -465,18 +453,12 @@ export default function HomePage() {
                       className="h-14 w-14 object-contain"
                     />
                   </div>
-                  <h2 className={`${cormorant.className} text-4xl leading-tight font-bold`}>
-                    Les dejamos informacion sobre los regalos
+                  <h2 className={`${cormorant.className} text-2xl leading-tight font-bold`}>
+                    El mejor regalo es compartir este día con ustedes. <br/>
+                    Si desean hacernos un obsequio agradeceremos una contribución en efectivo mediante lluvia de sobres.
                   </h2>
 
                   <div className="space-y-6">
-                    <div
-                      className={`${cormorant.className} text-2xl text-gray-700 leading-relaxed space-y-4`}
-                    >
-                      <p>
-                        Escribir lo de los regalos
-                      </p>
-                    </div>
                   </div>
   
                 </div>
@@ -507,15 +489,13 @@ export default function HomePage() {
                 {/* Center Text */}
                 <div className="space-y-6 text-center">
                   <div className="mb-8 flex items-center justify-center gap-4">
-                    <h2 className={`${meow.className} text-7xl font-bold`}>
-                      Gracias
+                    <h2 className={`${cormorant.className} text-6xl font-bold`}>
+                      Gracias por acompañarnos
                     </h2>
                   </div>
 
-                  <h2
-                    className={`${cormorant.className} text-4xl font-bold leading-tight`}
-                  >
-                    por acompañarnos!
+                  <h2 className={`${cormorant.className} text-3xl font-bold leading-tight`}>
+                    - Danaee y Alec -
                   </h2>
                 </div>
 
