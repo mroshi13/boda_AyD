@@ -266,11 +266,11 @@ export default function HomePage() {
                 <h1
                   className={`flex flex-col items-center text-center font-bold leading-[0.9]`}
                 >
-                  <span className={` ${antic.className} text-[clamp(2.8rem,8vw,4.5rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>
                     Lo que necesitas
                   </span>
 
-                  <span className={` ${antic.className} text-[clamp(4rem,11vw,6rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,4rem)]`}>
                     saber
                   </span>
                 </h1>
@@ -337,9 +337,9 @@ export default function HomePage() {
                 <div className="relative z-10 w-full max-w-3xl rounded-3xl px-5 py-8 md:px-10 md:py-10">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <div className="flex items-center gap-4">
-                      <h2 className="flex flex-col text-center text-[clamp(1.5rem,9vw,3rem)] font-bold leading-[0.9] md:text-left">
-                        <span className={`${antic.className}`}>Código de</span>
-                        <span className={`${antic.className}`}>Vestimenta</span>
+                      <h2 className="flex flex-col text-center font-bold leading-[0.9] md:text-left">
+                        <span className={`${antic.className} text-[clamp(1.5rem,9vw,3rem)]`}>Código de</span>
+                        <span className={`${antic.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>Vestimenta</span>
                       </h2>
 
                       <img
@@ -417,11 +417,11 @@ export default function HomePage() {
                 <h1
                   className={`flex flex-col items-center text-center font-semibold leading-[0.9]`}
                 >
-                  <span className={` ${antic.className} text-[clamp(2.8rem,7vw,4rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(2.8rem,7vw,3.5rem)]`}>
                     Opciones de
                   </span>
 
-                  <span className={` ${antic.className} text-[clamp(4rem,10vw,6rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(4rem,10vw,4.5rem)]`}>
                     Hospedaje
                   </span>
                 </h1>
@@ -433,7 +433,7 @@ export default function HomePage() {
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
                 <h2
-                  className={`${antic.className} text-4xl font-semibold text-center`}
+                  className={`${antic.className} text-2xl font-semibold text-center`}
                 >
                   Valle de Guadalupe
                 </h2>
@@ -460,7 +460,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
-              <h2 className={`${antic.className} text-4xl font-semibold text-center`}>
+              <h2 className={`${antic.className} text-2xl font-semibold text-center`}>
                 Ensenada
               </h2>
 
@@ -518,7 +518,7 @@ export default function HomePage() {
 
                 <div className="space-y-6">
                   <div className="flex items-center justify-start gap-4 mb-8">
-                    <h2 className={`${antic.className} text-7xl font-bold`}>
+                    <h2 className={`${antic.className} text-5xl font-bold`}>
                       Regalos
                     </h2>
 
