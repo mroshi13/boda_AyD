@@ -147,10 +147,6 @@ export default function RSVPSection() {
       <section id="rsvp" className="py-24 px-6 text-center">
         <h2 className={`${cormorant.className}text-4xl font-bold`}>RSVP</h2>
         <p className={`${cormorant.className}mt-4 text-gray-600`}>Invitación no encontrada.</p>
-
-        <p className={`${cormorant.className}mt-4 text-xs text-gray-400`}>
-          inviteID recibido: {inviteID || "ninguno"}
-        </p>
       </section>
     );
   }

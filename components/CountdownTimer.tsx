@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Meow_Script } from "next/font/google";
+import { Antic_Didone } from "next/font/google";
 
-const meow = Meow_Script({
-  subsets: ["latin"],
-  weight: ["400"]
+const antic = Antic_Didone({
+  weight: ["400"],
+  subsets: ["latin"]
 });
 
 export default function CountdownTimer() {
@@ -64,7 +64,7 @@ export default function CountdownTimer() {
   return (
     <div className="w-full max-w-6xl text-center">
 
-      <h2 className={`${meow.className} mb-6 font-script text-[clamp(3rem,5vw,5rem)] text-[#ffffff]`}>
+      <h2 className={`${antic.className} mb-6 font-script text-[clamp(3rem,5vw,5rem)] text-[#ffffff]`}>
         Faltan...
       </h2>
 

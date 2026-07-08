@@ -8,6 +8,7 @@ import { Cormorant_Garamond } from "next/font/google";
 import { Bodoni_Moda } from "next/font/google";
 import { Meow_Script } from "next/font/google";
 import { Antic_Didone } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -269,7 +270,7 @@ export default function HomePage() {
                     Lo que necesitas
                   </span>
 
-                  <span className={` ${meow.className} text-[clamp(4rem,11vw,6rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(4rem,11vw,6rem)]`}>
                     saber
                   </span>
                 </h1>
@@ -338,7 +339,7 @@ export default function HomePage() {
                     <div className="flex items-center gap-4">
                       <h2 className="flex flex-col text-center text-[clamp(3rem,10vw,5rem)] font-bold leading-[0.9] md:text-left">
                         <span className={`${antic.className}`}>Código de</span>
-                        <span className={`${meow.className}`}>Vestimenta</span>
+                        <span className={`${antic.className}`}>Vestimenta</span>
                       </h2>
 
                       <img
@@ -420,7 +421,7 @@ export default function HomePage() {
                     Opciones de
                   </span>
 
-                  <span className={` ${meow.className} text-[clamp(4rem,10vw,6rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(4rem,10vw,6rem)]`}>
                     Hospedaje
                   </span>
                 </h1>
@@ -432,7 +433,7 @@ export default function HomePage() {
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
                 <h2
-                  className={`${meow.className} text-4xl font-semibold text-center`}
+                  className={`${antic.className} text-4xl font-semibold text-center`}
                 >
                   Valle de Guadalupe
                 </h2>
@@ -459,7 +460,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
-              <h2 className={`${meow.className} text-4xl font-semibold text-center`}>
+              <h2 className={`${antic.className} text-4xl font-semibold text-center`}>
                 Ensenada
               </h2>
 
@@ -517,7 +518,7 @@ export default function HomePage() {
 
                 <div className="space-y-6">
                   <div className="flex items-center justify-start gap-4 mb-8">
-                    <h2 className={`${meow.className} text-7xl font-bold`}>
+                    <h2 className={`${antic.className} text-7xl font-bold`}>
                       Regalos
                     </h2>
 
@@ -568,7 +569,7 @@ export default function HomePage() {
                     </h2>
                   </div>
 
-                  <h2 className={`${meow.className} text-3xl font-bold leading-tight`}>
+                  <h2 className={`${cormorant.className} text-3xl font-bold leading-tight`}>
                     - Danaee y Alec -
                   </h2>
                 </div>
@@ -587,7 +588,10 @@ export default function HomePage() {
               </div>
             </section>
           </WavySection>
+          <p className={`${antic.className}`}>
           Website by: MRoshi©
+          </p>
+          <Analytics/>
         </>
       )}
     </main>
