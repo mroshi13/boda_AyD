@@ -189,7 +189,7 @@ export default function HomePage() {
                   <img
                     src="/images/espalda.jpg"
                     alt="Alec y Danaee"
-                    className="rounded-2xl object-cover w-full max-w-md aspect-[4/5]"
+                    className="rounded-3xl object-cover w-full max-w-md aspect-[4/5]"
                   />
                 </div>
               </div>
@@ -320,7 +320,7 @@ export default function HomePage() {
                   </div>
 
                   <div
-                    className={`${antic.className} space-y-4 text-center font-bold text-xl leading-relaxed md:text-left md:text-2xl`}
+                    className={`${antic.className} space-y-4 text-center text-xl text-[#111111] [text-shadow:0_0_0.4px_rgba(0,0,0,0.8)] leading-relaxed md:text-left md:text-2xl`}
                   >
                     <p>
                       - Vestimenta Formal <br />
@@ -497,7 +497,7 @@ export default function HomePage() {
                       className="h-14 w-14 object-contain"
                     />
                   </div>
-                  <h2 className={`${cormorant.className} text-2xl leading-tight font-bold`}>
+                  <h2 className={`${antic.className} text-2xl leading-tight font-semibold`}>
                     El mejor regalo es compartir este día con ustedes. <br/>
                     Si desean hacernos un obsequio, agradeceremos una contribución en efectivo mediante lluvia de sobres.
                   </h2>
