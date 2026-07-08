@@ -266,11 +266,11 @@ export default function HomePage() {
                 <h1
                   className={`flex flex-col items-center text-center font-bold leading-[0.9]`}
                 >
-                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,2.5rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,4rem)]`}>
                     Lo que necesitas
                   </span>
 
-                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,3rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>
                     saber
                   </span>
                 </h1>
