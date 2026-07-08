@@ -337,7 +337,7 @@ export default function HomePage() {
                 <div className="relative z-10 w-full max-w-3xl rounded-3xl px-5 py-8 md:px-10 md:py-10">
                   <div className="mb-8 flex justify-center md:justify-start">
                     <div className="flex items-center gap-4">
-                      <h2 className="flex flex-col text-center text-[clamp(3rem,10vw,5rem)] font-bold leading-[0.9] md:text-left">
+                      <h2 className="flex flex-col text-center text-[clamp(1.5rem,9vw,3rem)] font-bold leading-[0.9] md:text-left">
                         <span className={`${antic.className}`}>Código de</span>
                         <span className={`${antic.className}`}>Vestimenta</span>
                       </h2>
