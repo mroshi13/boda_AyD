@@ -533,7 +533,7 @@ export default function HomePage() {
                 {/* Center Text */}
                 <div className="space-y-6 text-center">
                   <div className="mb-8 flex items-center justify-center gap-4">
-                    <h2 className={`${antic.className} text-6xl font-bold`}>
+                    <h2 className={`${antic.className} text-4xl font-bold`}>
                       Gracias por acompañarnos
                     </h2>
                   </div>
