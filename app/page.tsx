@@ -266,11 +266,11 @@ export default function HomePage() {
                 <h1
                   className={`flex flex-col items-center text-center font-bold leading-[0.9]`}
                 >
-                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,2.5rem)]`}>
                     Lo que necesitas
                   </span>
 
-                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,4rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,3rem)]`}>
                     saber
                   </span>
                 </h1>
@@ -489,13 +489,14 @@ export default function HomePage() {
                   Tarifa especial para nuestros invitados
                 </p>
 
-                <p className={`${antic.className} mt-2 text-lg italic text-gray-700`}>
+                <p className={`${antic.className} mt-2 text-lg italic text-[#111111]]`}>
                   Contamos con convenio con el hotel City Express Plus.<br/>
                   Favor de contactar a: <br/>
                   ROCIO FUENTES<br/>
                   55 6448 8773<br/>
                   (646) 153 84 50 ext. 192<br/>
-                  CODIGO: BODA-DANAE&ALEC2026
+                  CODIGO: <br/>
+                  BODA-DANAE&ALEC2026
                 </p>
               </div>
             </div>
