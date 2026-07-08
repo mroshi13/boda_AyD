@@ -7,6 +7,7 @@ import CountdownTimer from "../components/CountdownTimer";
 import { Cormorant_Garamond } from "next/font/google";
 import { Bodoni_Moda } from "next/font/google";
 import { Meow_Script } from "next/font/google";
+import { Antic_Didone } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,6 +23,11 @@ const meow = Meow_Script({
   subsets: ["latin"],
   weight: ["400"]
 });
+
+const antic = Antic_Didone({
+  weight: ["400"],
+  subsets: ["latin"]
+})
 
 const galleryPhotos = [
   {
@@ -79,7 +85,7 @@ export default function HomePage() {
       name: "Torre Lucerna",
       reservation: "https://hoteleslucerna.com/es/ensenada",
       maps: "https://maps.app.goo.gl/SBRmnPdevfNUQNU48",
-    },
+    }
   ];
 
   const linkClass = "text-blue-600 underline hover:text-blue-800 transition";
@@ -153,8 +159,11 @@ export default function HomePage() {
       {isOpen && (
         <>
           <WavySection
-          topFlower="../images/orchid-top.png"
-          bottomFlower="../images/orchid-bottom.png">
+            topFlower="/images/orchid-top.png"
+            topFlowerClassName="w-[280px] md:w-[400px] lg:w-[450px] xl:w-[450px] -left-20 top-0"
+            bottomFlower="/images/orchid-bottom.png"
+            bottomFlowerClassName="w-[280px] md:w-[400px] lg:w-[450px] xl:w-[500px] -right-20 bottom-0"
+          >
           {/* COUPLE SECTION */}
           <section
             id="novios"
@@ -224,13 +233,19 @@ export default function HomePage() {
 
               <div className="mx-auto flex w-full max-w-[720px] flex-col items-center space-y-10 px-1 md:space-y-12">
                 <h1
-                  className={`${meow.className} max-w-full text-center text-[clamp(3rem,12vw,6rem)] leading-tight font-bold`}
+                  className={`flex flex-col items-center text-center font-bold leading-[0.9]`}
                 >
-                  Lo que necesitas saber
+                  <span className={` ${antic.className} text-[clamp(2.8rem,8vw,4.5rem)]`}>
+                    Lo que necesitas
+                  </span>
+
+                  <span className={` ${meow.className} text-[clamp(4rem,11vw,6rem)]`}>
+                    saber
+                  </span>
                 </h1>
 
                 <div
-                  className={`${bodoni.className} w-full max-w-full space-y-6 text-center text-xl leading-relaxed text-gray-700 md:text-3xl`}
+                  className={`${antic.className} w-full max-w-full space-y-6 text-center text-xl leading-relaxed text-gray-700 md:text-3xl`}
                 >
                   {[
                     ["/images/rings-icon.png", "Ceremonia", "3:00 PM — Ceremonía", "h-10 w-10"],
@@ -275,33 +290,41 @@ export default function HomePage() {
         </WavySection>
 
           <WavySection
-            topFlower="../images/lavanda.png">
+            topFlower="../images/lavanda.png"
+            topFlowerClassName="
+              left-1/2 top-8 h-[600px]
+              w-[450px] -translate-x-1/2 
+              opacity-[0.6]
+              md:w-[800px]
+            ">
           <section
             id="faqs"
-            className="min-h-0 flex items-center text-[#222222] px-6 py-24"
+            className="min-h-0 w-full overflow-hidden px-4 py-20 text-[#222222] md:px-6 md:py-24"
           >
-            <div className="w-full max-w-5xl mx-auto grid md:grid-cols-[60%_40%] gap-6 items-center">
-              <div className="flex flex-col items-start space-y-12 text-left">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-start gap-4 mb-8">
-                    <br/>
-                    <h2 className={`${meow.className} text-5xl font-bold`}>
-                      Código de Vestimenta
-                    </h2>
+            <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-10 md:grid-cols-[60%_40%] md:gap-6">
+              <div className="flex w-full flex-col items-center text-center md:items-start md:text-left">
+                <div className="relative z-10 w-full max-w-3xl rounded-3xl px-5 py-8 md:px-10 md:py-10">
+                  <div className="mb-8 flex justify-center md:justify-start">
+                    <div className="flex items-center gap-4">
+                      <h2 className="flex flex-col text-center text-[clamp(3rem,10vw,5rem)] font-bold leading-[0.9] md:text-left">
+                        <span className={`${antic.className}`}>Código de</span>
+                        <span className={`${meow.className}`}>Vestimenta</span>
+                      </h2>
 
-                    <img
-                      src="/images/vestido.png"
-                      alt="Wedding dress"
-                      className="h-14 w-14 object-contain"
-                    />
+                      <img
+                        src="/images/vestido.png"
+                        alt="Wedding dress"
+                        className="h-14 w-14 shrink-0 object-contain md:h-16 md:w-16"
+                      />
+                    </div>
                   </div>
 
                   <div
-                    className={`${bodoni.className} text-2xl leading-relaxed space-y-4`}
+                    className={`${antic.className} space-y-4 text-center text-xl leading-relaxed md:text-left md:text-2xl`}
                   >
-                    <p className="justify-center">
-                      - Vestimenta Formal <br/>
-                      - Mujeres: Vestido Largo <br/>
+                    <p>
+                      - Vestimenta Formal <br />
+                      - Mujeres: Vestido Largo <br />
                       - Hombres: Traje / No tenis
                     </p>
 
@@ -310,21 +333,21 @@ export default function HomePage() {
                         href="https://pin.it/38qXehQiH"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-black underline transition text-blue-700"
+                        className="break-words text-blue-700 underline transition hover:text-black"
                       >
-                        Clic aqui para un guía de colores
+                        Clic aquí para una guía de colores
                       </a>
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex justify-start">
-                <div className="bg-[#FFFDF8] p-5 rounded-3xl shadow-2xl border border-gray-200">
+              <div className="flex justify-center md:justify-start">
+                <div className="w-full max-w-sm rounded-3xl border border-gray-200 bg-[#FFFDF8] p-4 shadow-2xl md:max-w-md md:p-5">
                   <img
                     src="/images/anillo.JPG"
                     alt="Alec y Danaee"
-                    className="rounded-2xl object-cover w-full max-w-md aspect-[4/5]"
+                    className="aspect-[4/5] w-full rounded-2xl object-cover"
                   />
                 </div>
               </div>
@@ -360,8 +383,16 @@ export default function HomePage() {
           <section id="hospedaje" className="px-6 py-24 text-center">
             <div className="mx-auto w-full max-w-5xl space-y-16">
               <div className="space-y-4">
-                <h1 className={`${meow.className} text-7xl font-semibold`}>
-                  Hospedaje
+                <h1
+                  className={`flex flex-col items-center text-center font-semibold leading-[0.9]`}
+                >
+                  <span className={` ${antic.className} text-[clamp(2.8rem,7vw,4rem)]`}>
+                    Opciones de
+                  </span>
+
+                  <span className={` ${meow.className} text-[clamp(4rem,10vw,6rem)]`}>
+                    Hospedaje
+                  </span>
                 </h1>
                 <br/>
                 <p className={`${cormorant.className} text-2xl text-gray-700 max-w-2xl mx-auto`}>
@@ -398,32 +429,44 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-6 text-left max-w-3xl mx-auto">
-                <h2
-                  className={`${meow.className} text-4xl font-semibold text-center`}
-                >
-                  Ensenada
-                </h2>
+              <h2 className={`${meow.className} text-4xl font-semibold text-center`}>
+                Ensenada
+              </h2>
 
-                <ul className="divide-y divide-black/10">
-                  {hotelsOutsideValley.map((hotel) => (
-                    <li
-                      key={hotel.name}
-                      className="flex items-center justify-between py-5"
+              <ul className="divide-y divide-black/10">
+                {hotelsOutsideValley.map((hotel) => (
+                  <li
+                    key={hotel.name}
+                    className="flex items-center justify-between gap-4 py-5"
+                  >
+                    <span className="text-lg font-medium">{hotel.name}</span>
+
+                    <a
+                      href={hotel.reservation}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 underline text-blue-700 hover:text-blue-900 transition"
                     >
-                      <span className="text-lg font-medium">{hotel.name}</span>
+                      Reservar →
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-                      <a
-                        href={hotel.reservation}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline text-blue-700 hover:text-blue-900 transition"
-                      >
-                        Reservar →
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <div className="mt-10 rounded-2xl border border-[#222222]/15 bg-[#FFFDF8] px-6 py-5 text-center shadow-sm">
+                <p className={`${bodoni.className} text-xl font-semibold text-[#222222]`}>
+                  Tarifa especial para nuestros invitados
+                </p>
+
+                <p className={`${antic.className} mt-2 text-lg italic text-gray-700`}>
+                  Contamos con convenio con el hotel City Express Plus.<br/>
+                  Favor de contactar a ROCIO FUENTES<br/>
+                  55 6448 8773<br/>
+                  (646) 153 84 50 ext. 192<br/>
+                  CODIGO: BODA-DANAE&ALEC2026
+                </p>
               </div>
+            </div>
             </div>
           </section>
           </WavySection>
@@ -455,7 +498,7 @@ export default function HomePage() {
                   </div>
                   <h2 className={`${cormorant.className} text-2xl leading-tight font-bold`}>
                     El mejor regalo es compartir este día con ustedes. <br/>
-                    Si desean hacernos un obsequio agradeceremos una contribución en efectivo mediante lluvia de sobres.
+                    Si desean hacernos un obsequio, agradeceremos una contribución en efectivo mediante lluvia de sobres.
                   </h2>
 
                   <div className="space-y-6">
@@ -489,12 +532,12 @@ export default function HomePage() {
                 {/* Center Text */}
                 <div className="space-y-6 text-center">
                   <div className="mb-8 flex items-center justify-center gap-4">
-                    <h2 className={`${cormorant.className} text-6xl font-bold`}>
+                    <h2 className={`${antic.className} text-6xl font-bold`}>
                       Gracias por acompañarnos
                     </h2>
                   </div>
 
-                  <h2 className={`${cormorant.className} text-3xl font-bold leading-tight`}>
+                  <h2 className={`${meow.className} text-3xl font-bold leading-tight`}>
                     - Danaee y Alec -
                   </h2>
                 </div>
