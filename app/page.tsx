@@ -294,7 +294,7 @@ export default function HomePage() {
             topFlowerClassName="
               left-1/2 top-8 h-[600px]
               w-[450px] -translate-x-1/2 
-              opacity-[0.25]
+              opacity-[0.15]
               md:w-[800px]
             ">
           <section
