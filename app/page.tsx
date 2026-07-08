@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RSVPSection from "../components/RSVPSection";
 import WavySection from "../components/WavySection";
 import CountdownTimer from "../components/CountdownTimer";
@@ -50,6 +50,29 @@ export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   const [isFading, setIsFading] = useState(false);
 
+  const hasStartedMusic = useRef(false);
+
+  useEffect(() => {
+    const handleVisibility = () => {
+      const audio = document.querySelector("audio");
+
+      if (!(audio instanceof HTMLAudioElement)) return;
+      if (!hasStartedMusic.current) return;
+
+      if (document.hidden) {
+        audio.pause();
+      } else {
+        audio.play().catch(() => {});
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
+  });
+
   const hotelsInValley = [
     {
       name: "Eliá",
@@ -97,7 +120,14 @@ export default function HomePage() {
       audio.volume = 0.5;
 
       if (audio.paused) {
-        audio.play().catch(console.error);
+        audio
+          .play()
+          .then(() => {
+            hasStartedMusic.current = true;
+          })
+          .catch(console.error);
+      } else {
+        hasStartedMusic.current = true;
       }
     }
 
