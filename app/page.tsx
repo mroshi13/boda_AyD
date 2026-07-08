@@ -320,7 +320,7 @@ export default function HomePage() {
                   </div>
 
                   <div
-                    className={`${antic.className} space-y-4 text-center text-xl leading-relaxed md:text-left md:text-2xl`}
+                    className={`${antic.className} space-y-4 text-center font-semibold text-xl leading-relaxed md:text-left md:text-2xl`}
                   >
                     <p>
                       - Vestimenta Formal <br />
