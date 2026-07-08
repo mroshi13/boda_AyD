@@ -557,7 +557,7 @@ export default function HomePage() {
               </div>
             </section>
           </WavySection>
-          
+          Website by: MRoshi©
         </>
       )}
     </main>
