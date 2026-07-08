@@ -294,7 +294,7 @@ export default function HomePage() {
             topFlowerClassName="
               left-1/2 top-8 h-[600px]
               w-[450px] -translate-x-1/2 
-              opacity-[0.3]
+              opacity-[0.25]
               md:w-[800px]
             ">
           <section
@@ -320,7 +320,7 @@ export default function HomePage() {
                   </div>
 
                   <div
-                    className={`${antic.className} space-y-4 text-center font-semibold text-xl leading-relaxed md:text-left md:text-2xl`}
+                    className={`${antic.className} space-y-4 text-center font-bold text-xl leading-relaxed md:text-left md:text-2xl`}
                   >
                     <p>
                       - Vestimenta Formal <br />
@@ -460,7 +460,8 @@ export default function HomePage() {
 
                 <p className={`${antic.className} mt-2 text-lg italic text-gray-700`}>
                   Contamos con convenio con el hotel City Express Plus.<br/>
-                  Favor de contactar a ROCIO FUENTES<br/>
+                  Favor de contactar a: <br/>
+                  ROCIO FUENTES<br/>
                   55 6448 8773<br/>
                   (646) 153 84 50 ext. 192<br/>
                   CODIGO: BODA-DANAE&ALEC2026
