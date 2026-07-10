@@ -276,7 +276,7 @@ export default function HomePage() {
                     Lo que necesitas
                   </span>
 
-                  <span className={` ${tang.className} text-[clamp(4.5rem,9vw,7rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,7rem)]`}>
                     saber
                   </span>
                 </h1>
@@ -345,7 +345,7 @@ export default function HomePage() {
                     <div className="flex items-center gap-4">
                       <h2 className="flex flex-col text-center font-bold leading-[0.9] md:text-left">
                         <span className={`${antic.className} text-[clamp(1rem,9vw,3rem)]`}>Código de</span>
-                        <span className={`${tang.className} text-[clamp(3.5rem,9vw,3.5rem)]`}>Vestimenta</span>
+                        <span className={`${antic.className} text-[clamp(1rem,9vw,3.5rem)]`}>Vestimenta</span>
                       </h2>
 
                       <img
@@ -427,7 +427,7 @@ export default function HomePage() {
                     Opciones de
                   </span>
 
-                  <span className={` ${tang.className} text-[clamp(4rem,10vw,3rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(1.5rem,10vw,3rem)]`}>
                     Hospedaje
                   </span>
                 </h1>
