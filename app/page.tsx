@@ -264,7 +264,7 @@ export default function HomePage() {
                 <img
                   src="/images/iniciales_gde.png"
                   alt="Decoración floral"
-                  className="w-[220px] sm:w-[350px] md:w-[360px] lg:w-[430px] object-contain"
+                  className="w-[350px] sm:w-[350px] md:w-[360px] lg:w-[430px] object-contain"
                 />
               </div>
 
