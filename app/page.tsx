@@ -4,17 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import RSVPSection from "../components/RSVPSection";
 import WavySection from "../components/WavySection";
 import CountdownTimer from "../components/CountdownTimer";
-import { Cormorant_Garamond } from "next/font/google";
+//import { Cormorant_Garamond } from "next/font/google";
 import { Bodoni_Moda } from "next/font/google";
 import { Meow_Script } from "next/font/google";
 import { Antic_Didone } from "next/font/google";
 import { Tangerine } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+// const cormorant = Cormorant_Garamond({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+// });
 
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
@@ -169,7 +169,7 @@ export default function HomePage() {
               ¡Nos casamos!
             </p>
 
-            <h1 className={`${cormorant.className} text-5xl font-bold`}>
+            <h1 className={`${antic.className} text-5xl font-bold`}>
               Alec & Danaee
             </h1>
 
@@ -208,7 +208,7 @@ export default function HomePage() {
           >
             
             <div className="w-full max-w-7xl mx-auto grid md:grid-cols-[55%_45%] gap-10 items-center">
-              <div className={`${cormorant.className} flex flex-col text-4xl items-center space-y-12`}>
+              <div className={`${antic.className} flex flex-col text-4xl items-center space-y-12`}>
                 <p>
                   Alec Ortega Lara
                 </p>
@@ -264,7 +264,7 @@ export default function HomePage() {
                 <img
                   src="/images/iniciales_gde.png"
                   alt="Decoración floral"
-                  className="w-full max-w-[260px] object-contain md:max-w-xl"
+                  className="w-[220px] sm:w-[280px] md:w-[360px] lg:w-[430px] object-contain"
                 />
               </div>
 
@@ -432,7 +432,7 @@ export default function HomePage() {
                   </span>
                 </h1>
                 <br/>
-                <p className={`${cormorant.className} text-2xl text-gray-700 max-w-2xl mx-auto`}>
+                <p className={`${antic.className} text-2xl text-gray-700 max-w-2xl mx-auto`}>
                   Les compartimos algunas opciones de hospedaje en Valle de Guadalupe y Ensenada.
                 </p>
               </div>
@@ -491,7 +491,7 @@ export default function HomePage() {
               </ul>
 
               <div className="mt-10 rounded-2xl border border-[#222222]/15 bg-[#FFFDF8] px-6 py-5 text-center shadow-sm">
-                <p className={`${bodoni.className} text-xl font-semibold text-[#222222]`}>
+                <p className={`${bodoni.className} text-xl underline font-semibold text-[#222222]`}>
                   Tarifa especial para nuestros invitados
                 </p>
 
