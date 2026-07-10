@@ -8,6 +8,7 @@ import { Cormorant_Garamond } from "next/font/google";
 import { Bodoni_Moda } from "next/font/google";
 import { Meow_Script } from "next/font/google";
 import { Antic_Didone } from "next/font/google";
+import { Tangerine } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 
 const cormorant = Cormorant_Garamond({
@@ -27,6 +28,11 @@ const meow = Meow_Script({
 
 const antic = Antic_Didone({
   weight: ["400"],
+  subsets: ["latin"]
+})
+
+const tang = Tangerine({
+  weight: ["400", "700"],
   subsets: ["latin"]
 })
 
@@ -270,7 +276,7 @@ export default function HomePage() {
                     Lo que necesitas
                   </span>
 
-                  <span className={` ${antic.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>
+                  <span className={` ${tang.className} text-[clamp(3rem,9vw,7rem)]`}>
                     saber
                   </span>
                 </h1>
@@ -339,7 +345,7 @@ export default function HomePage() {
                     <div className="flex items-center gap-4">
                       <h2 className="flex flex-col text-center font-bold leading-[0.9] md:text-left">
                         <span className={`${antic.className} text-[clamp(1.5rem,9vw,3rem)]`}>Código de</span>
-                        <span className={`${antic.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>Vestimenta</span>
+                        <span className={`${tang.className} text-[clamp(1.5rem,9vw,3.5rem)]`}>Vestimenta</span>
                       </h2>
 
                       <img
@@ -417,11 +423,11 @@ export default function HomePage() {
                 <h1
                   className={`flex flex-col items-center text-center font-semibold leading-[0.9]`}
                 >
-                  <span className={` ${antic.className} text-[clamp(2.8rem,7vw,3.5rem)]`}>
+                  <span className={` ${antic.className} text-[clamp(2.8rem,7vw,2rem)]`}>
                     Opciones de
                   </span>
 
-                  <span className={` ${antic.className} text-[clamp(4rem,10vw,4.5rem)]`}>
+                  <span className={` ${tang.className} text-[clamp(4rem,10vw,3rem)]`}>
                     Hospedaje
                   </span>
                 </h1>
@@ -570,7 +576,7 @@ export default function HomePage() {
                     </h2>
                   </div>
 
-                  <h2 className={`${cormorant.className} text-3xl font-bold leading-tight`}>
+                  <h2 className={`${tang.className} text-3xl leading-tight`}>
                     - Danaee y Alec -
                   </h2>
                 </div>
