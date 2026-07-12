@@ -27,12 +27,12 @@ const antic = Antic_Didone({
 });
 
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbzmusq5cs5qGQhqL5-1vVKZgTp0RVWFQ6ioLsGAmOhzmKF5aWQebir_ze4Avct5H7682w/exec";
+  "https://script.google.com/macros/s/AKfycbxijva84KTvwlqgzlrLuFlOyU2FQEwwofMZgvM-4b5d355owr2bVXHXSUDgbfszTZ5RnQ/exec";
 
 type Guest = {
   inviteID?: string;
   name: string;
-  email: string;
+  p_number: string;
   guestsAllowed: number;
   message?: string;
   invited?: boolean;
@@ -43,7 +43,7 @@ type Guest = {
 export default function RSVPSection() {
   const [guest, setGuest] = useState<Guest | null>(null);
   const [inviteID, setInviteID] = useState<string | null>(null);
-  const [email, setEmail] = useState<string | null>(null);
+  const [pNumber, setP_number] = useState<string | null>(null);
 
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -53,13 +53,13 @@ export default function RSVPSection() {
     const params = new URLSearchParams(window.location.search);
 
     const urlInviteID = params.get("inviteID");
-    const urlEmail = params.get("email");
+    const urlP_number = params.get("p_number");
 
     setInviteID(urlInviteID);
-    setEmail(urlEmail);
+    setP_number(urlP_number);
 
     async function loadGuest() {
-      if (!urlInviteID && !urlEmail) {
+      if (!urlInviteID && !urlP_number) {
         setLoading(false);
         return;
       }
@@ -67,7 +67,7 @@ export default function RSVPSection() {
       try {
         const query = urlInviteID
           ? `?inviteID=${encodeURIComponent(urlInviteID)}`
-          : `?email=${encodeURIComponent(urlEmail ?? "")}`;
+          : `?p_number=${encodeURIComponent(urlP_number ?? "")}`;
 
         const url = `${API_URL}${query}`;
 
@@ -101,43 +101,89 @@ export default function RSVPSection() {
   }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!guest) return;
+  if (!guest) return;
 
-    setSubmitting(true);
+  setSubmitting(true);
 
-    const form = new FormData(e.currentTarget);
+  const form = new FormData(e.currentTarget);
+  const rsvpStatus = String(form.get("rsvp") ?? "");
 
-    const payload = {
-      inviteID: guest.inviteID ?? inviteID,
-      email: guest.email,
-      rsvpStatus: form.get("rsvp"),
-      guestsAttending: Number(form.get("guestsAttending")),
-      message: form.get("message"),
+  const payload = {
+    inviteID: String(guest.inviteID ?? inviteID ?? ""),
+    p_number: String(guest.p_number ?? pNumber ?? ""),
+    rsvpStatus,
+    guestsAttending:
+      rsvpStatus === "no"
+        ? 0
+        : Number(form.get("guestsAttending") ?? 0),
+    message: String(form.get("message") ?? ""),
+  };
+
+  console.log("Submitting RSVP payload:", payload);
+
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const responseText = await res.text();
+
+    console.log("Raw RSVP response:", responseText);
+
+    if (!res.ok) {
+      throw new Error(
+        `HTTP error ${res.status}: ${responseText}`
+      );
+    }
+
+    let data: {
+      success?: boolean;
+      error?: string;
     };
 
     try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-
-      console.log("RSVP submit response:", data);
-
-      if (!data.error) {
-        setSubmitted(true);
-      } else {
-        console.error("RSVP submit error:", data.error);
-      }
-    } catch (err) {
-      console.error("Failed to submit RSVP:", err);
-    } finally {
-      setSubmitting(false);
+      data = JSON.parse(responseText);
+    } catch {
+      throw new Error(
+        `The RSVP service returned invalid JSON: ${responseText}`
+      );
     }
+
+    console.log("RSVP submit response:", data);
+
+    if (data.success !== true) {
+      throw new Error(
+        data.error || "The RSVP was not saved."
+      );
+    }
+
+    setGuest((currentGuest) =>
+      currentGuest
+        ? {
+            ...currentGuest,
+            rsvpStatus,
+            guestsAttending: payload.guestsAttending,
+          }
+        : currentGuest
+    );
+
+    setSubmitted(true);
+  } catch (error) {
+    console.error("Failed to submit RSVP:", error);
+
+    alert(
+      "No pudimos guardar tu RSVP. Por favor intenta nuevamente."
+    );
+  } finally {
+    setSubmitting(false);
   }
+}
 
   if (loading) {
     return (
