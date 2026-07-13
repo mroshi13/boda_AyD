@@ -490,21 +490,49 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              <div className="mt-10 rounded-2xl border border-[#222222]/15 bg-[#FFFDF8] px-6 py-5 text-center shadow-sm">
-                <p className={`${bodoni.className} text-xl underline font-semibold text-[#222222]`}>
-                  Tarifa especial para nuestros invitados
+              <div className="text-center mt-10 rounded-2xl border border-[#222222]/15 bg-[#FFFDF8] px-6 py-5 shadow-sm">
+                <p className={`${bodoni.className} text-xl font-semibold underline text-[#222222]`}>
+                      Tarifas especiales para nuestros invitados
                 </p>
+                <p className={`${bodoni.className} text-md text-[#111111]`}>Contamos con convenio con ambos hoteles</p>
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* Left subcontainer */}
+                <div className="text-center">
+                  <p className={`${bodoni.className} text-xl font-semibold underline text-[#222222]`}>
+                    City Express Plus
+                  </p>
 
-                <p className={`${antic.className} mt-2 text-lg italic text-[#111111]]`}>
-                  Contamos con convenio con el hotel City Express Plus.<br/>
-                  Favor de contactar a: <br/>
-                  ROCIO FUENTES<br/>
-                  55 6448 8773<br/>
-                  (646) 153 84 50 ext. 192<br/>
-                  CODIGO: <br/>
-                  BODA-DANAE&ALEC2026
-                </p>
+                  <p className={`${antic.className} mt-2 text-lg italic text-[#111111]`}>
+                    <p className={`${antic.className} mt-2 text-lg italic text-[#111111]`}>
+                      Favor de contactar a:<br />
+                      <strong>ROCÍO FUENTES</strong><br/>
+                      55 6448 8773<br />
+                      (646) 153 8450 ext. 192<br /><br/>
+
+                      <strong>Código:</strong><br />
+                      BODA-DANAE&amp;ALEC2026
+                    </p>
+                  </p>
+                </div>
+
+                {/* Right subcontainer */}
+                <div className="text-center">
+                  <p className={`${bodoni.className} text-xl font-semibold underline text-[#222222]`}>
+                    Hotel Lucerna
+                  </p>
+
+                  <p className={`${antic.className} mt-2 text-lg italic text-[#111111]`}>
+                    Favor de contactar a:<br />
+                    <strong>CENTRAL DE RESERVACIONES</strong><br />
+                    MX 800 026 63 00<br />
+                    USA 800 582 3762<br /><br />
+
+                    <strong>Código:</strong><br />
+                    BODA DANAEE &amp; ALEC 2026
+                  </p>
+                </div>
               </div>
+            </div>
             </div>
             </div>
           </section>
