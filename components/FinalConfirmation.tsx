@@ -264,6 +264,53 @@ export default function FinalConfirmation() {
           </div>
         </div>
 
+        {/* Itinerary */}
+        <div className="bg-[#FFFDF8] border rounded-2xl p-8 shadow-sm text-center">
+          <h2
+            className={`${antic.className} text-3xl font-bold text-[#222222]`}
+          >
+            Itinerario
+          </h2>
+
+          <div className="mt-8 space-y-6">
+            {/* Ceremony */}
+            <div>
+              <p
+                className={`${cormorant.className} text-3xl font-semibold text-[#222222]`}
+              >
+                4:00 PM
+              </p>
+
+              <p
+                className={`${cormorant.className} text-xl text-gray-700 mt-1`}
+              >
+                Ceremonia en IMANHA
+              </p>
+              
+            </div>
+
+            {/* Divider */}
+            <div className="flex justify-center">
+              <div className="h-8 w-px bg-gray-300" />
+            </div>
+
+            {/* Reception */}
+            <div>
+              <p
+                className={`${cormorant.className} text-3xl font-semibold text-[#222222]`}
+              >
+                6:00 PM
+              </p>
+
+              <p
+                className={`${cormorant.className} text-xl text-gray-700 mt-1`}
+              >
+                Recepción en IMANHA
+              </p>
+            </div>
+          </div>
+        </div>
+
         {submitted ? (
           <div className="bg-[#FFFDF8] border rounded-2xl p-8 shadow-sm text-center">
             {guest.finalConfirmation === "yes" ? (
