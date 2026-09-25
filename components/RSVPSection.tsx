@@ -27,7 +27,7 @@ const antic = Antic_Didone({
 });
 
 const API_URL =
-  "https://script.google.com/macros/s/AKfycby4jbQPpCsrS4t89CCDYTuu_aAO2nBbl78DSBsFm99pUYivT-jgyksIRONzaQGv8Qbx6A/exec";
+  "https://script.google.com/macros/s/AKfycbx1AoxTipX7uWyz1Yo-A3FyLETdalkYMO8teRaKQ9WX6_UP1h8jQdnyvsyPYfV8PkcfIg/exec";
 
 type Guest = {
   inviteID?: string;
